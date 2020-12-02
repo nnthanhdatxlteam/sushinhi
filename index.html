@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Sushi Nhi Menu</title>
     <style>
+        body {
+            position: relative;
+        }
         .overlay {
             position: absolute;
             top: -31px;
@@ -17,6 +20,8 @@
             background: url("./assets/images/0.png"), repeat;
             z-index: 999;
             opacity: 0.3;
+            bottom: 0;
+            height: 100%;
         }
         .menu-item {
             z-index: 1;
@@ -48,12 +53,9 @@
 
     wrapper.innerHTML = menu;
 
-    // check height of page
-    console.log(document.documentElement.scrollHeight);
-
-    document.addEventListener('DOMContentLoaded', function() {
-        $("#overlay").height(document.documentElement.scrollHeight);
-    })
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     $("#overlay").height(document.documentElement.scrollHeight);
+    // })
     // $(document).keydown(function(event){
     //     if(event.keyCode==123){
     //         return false;
