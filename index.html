@@ -14,7 +14,6 @@
             top: -31px;
             left: -129px;
             width: 120%;
-            height: 71000px;
             background: url("./assets/images/0.png"), repeat;
             z-index: 999;
             opacity: 0.3;
@@ -26,7 +25,7 @@
 </head>
 <body>
 
-<div class="overlay"></div>
+<div class="overlay" id="overlay"></div>
 <div class="menu-content col-12 text-center">
     <div id="sushiNhiMenu">
     </div>
@@ -51,18 +50,22 @@
 
     // check height of page
     console.log(document.documentElement.scrollHeight);
-    $(document).keydown(function(event){
-        if(event.keyCode==123){
-            return false;
-        }
-        else if (event.ctrlKey && event.shiftKey && event.keyCode==73){
-            return false;
-        }
-    });
 
-    $(document).on("contextmenu",function(e){
-        e.preventDefault();
-    });
+    document.addEventListener('DOMContentLoaded', function() {
+        $("#overlay").height(document.documentElement.scrollHeight);
+    })
+    // $(document).keydown(function(event){
+    //     if(event.keyCode==123){
+    //         return false;
+    //     }
+    //     else if (event.ctrlKey && event.shiftKey && event.keyCode==73){
+    //         return false;
+    //     }
+    // });
+    //
+    // $(document).on("contextmenu",function(e){
+    //     e.preventDefault();
+    // });
 </script>
 
 </body>
