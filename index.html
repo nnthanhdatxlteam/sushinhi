@@ -6,14 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">s
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Sushi Nhi Menu</title>
+    <style>
+        .overlay {
+            position: absolute;
+            top: 83px;
+            left: 155px;
+            width: 100%;
+            height: 71000px;
+            background: url("./assets/images/0.png"), repeat;
+            z-index: 999;
+            opacity: 0.3;
+        }
+        .menu-item {
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
 
-<div class="col-12 text-center">
+<div class="overlay"></div>
+<div class="menu-content col-12 text-center">
     <div id="sushiNhiMenu">
-
     </div>
 </div>
 
@@ -28,24 +43,26 @@
 
     var menu = '';
 
-    for (var i = 0; i <= 30; i++) {
-        menu += '<img src="assets/images/' + i + '.png" class="img-fluid" alt="Responsive image">';
+    for (var i = 1; i <= 30; i++) {
+        menu += '<img src="assets/images/' + i + '.png" class="img-fluid menu-item" alt="Responsive image">';
     }
 
     wrapper.innerHTML = menu;
 
-    // $(document).keydown(function(event){
-    //     if(event.keyCode==123){
-    //         return false;
-    //     }
-    //     else if (event.ctrlKey && event.shiftKey && event.keyCode==73){
-    //         return false;
-    //     }
-    // });
-    //
-    // $(document).on("contextmenu",function(e){
-    //     e.preventDefault();
-    // });
+    // check height of page
+    console.log(document.documentElement.scrollHeight);
+    $(document).keydown(function(event){
+        if(event.keyCode==123){
+            return false;
+        }
+        else if (event.ctrlKey && event.shiftKey && event.keyCode==73){
+            return false;
+        }
+    });
+
+    $(document).on("contextmenu",function(e){
+        e.preventDefault();
+    });
 </script>
 
 </body>
