@@ -10,6 +10,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
+    "watermark-enhancer": "^1.0.8",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -18,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run predeploy gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
