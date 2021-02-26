@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {LazyLoadImage} from 'react-lazy-load-image-component';
+import {Image, CloudinaryContext} from 'cloudinary-react';
 
 
 export default class HomePage extends Component {
@@ -26,10 +26,19 @@ export default class HomePage extends Component {
 
         return (
             <div className="home-page text-center">
+                <CloudinaryContext cloudName="nnthanhdat97">
                 {[...Array(31)].map((item, key) => key !== 0 &&
 
-                    <LazyLoadImage key={key} src={`${process.env.PUBLIC_URL}/assets/images/${key}.png`}
-                                   effect="blur" alt="Responsive image" width={windowWidth}/>)}
+                    <Image key={key}
+                           publicId={`sushinhi-menu/${key}`}
+                           loading="lazy"
+                           dpr="auto"
+                           responsive
+                           width={windowWidth}
+                           crop="scale"
+                           responsiveUseBreakpoints="true"
+                    />)}
+                </CloudinaryContext>
             </div>
         )
     }
